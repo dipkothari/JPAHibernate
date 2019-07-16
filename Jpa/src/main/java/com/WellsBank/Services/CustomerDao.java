@@ -46,7 +46,11 @@ public class CustomerDao {
 		 */
 		
 		 
+<<<<<<< HEAD
 		 cus c = em.find(cus.class, customerId);
+=======
+		 Customer c = em.find(Customer.class, customerId);
+>>>>>>> 7d2f66b86693b394e0eaa1a31f21846d08cf2893
 		 
 		  // remove data from database
 		 em.remove(c); em.getTransaction().commit(); 

@@ -89,6 +89,7 @@
             <property name="hibernate.hbm2ddl.auto" value="update"/>        
         </properties>
     </persistence-unit>
+<<<<<<< HEAD
     <persistence-unit name="onetoone" transaction-type="RESOURCE_LOCAL">
    
         <properties>
@@ -141,5 +142,7 @@
             <property name="hibernate.hbm2ddl.auto" value="update"/>        
         </properties>
     </persistence-unit> 
+=======
+>>>>>>> 7d2f66b86693b394e0eaa1a31f21846d08cf2893
      
 </persistence>
