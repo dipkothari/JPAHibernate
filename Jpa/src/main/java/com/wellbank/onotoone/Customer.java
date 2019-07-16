@@ -1,7 +1,8 @@
 package com.wellbank.onotoone;
 
-<<<<<<< HEAD
-import javax.persistence.CascadeType;
+
+import javax.persistence.CascadeType
+;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -37,8 +38,4 @@ public class Customer {
 		this.address = address;
 	}
 	
-=======
-public class Customer {
-
->>>>>>> 7d2f66b86693b394e0eaa1a31f21846d08cf2893
 }
