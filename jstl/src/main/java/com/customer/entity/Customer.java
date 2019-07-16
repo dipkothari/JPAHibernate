@@ -2,10 +2,16 @@ package com.customer.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Customer")
+@NamedQueries({
+@NamedQuery(name = "findname" , query = "select s from Customer s where s.name like 'd%'"),
+@NamedQuery(name = "deletename" , query = "delete from Customer s where s.name=?1")
+})
 public class Customer {
 @Id
 private int id;

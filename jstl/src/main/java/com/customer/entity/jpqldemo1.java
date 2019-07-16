@@ -7,30 +7,55 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
-import org.hibernate.result.UpdateCountOutput;
-
 public class jpqldemo1 {
 	public static void main(String[] args) {
+	
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("jpql1");
-		EntityManager em = emf.createEntityManager();
-		
+		EntityManager em =null;
+		em = emf.createEntityManager();
 		try {
-			int id =3;
-			String name = "dk";
+			
 			
 			em.getTransaction().begin();
+			
+			
 			//Fetching Entities
 			/* Query q = em.createQuery("select c from Customer c"); */
+			
+			
+			
 			//Named and Positional Parameter
+			
 			/*
 			 * Query q = em.createQuery("select c from Customer c where c.id=?2");
 			 * q.setParameter(2, id);
 			 */
-			Query q = em.createQuery("update Customer c set c.name=:name where c.id=:id");
-			q.setParameter("name", name);
-			q.setParameter("id", id);
-			int UpdateCountOutput = q.executeUpdate();
 			
+			
+			// update 
+			
+			
+			/*
+			 * Query q =
+			 * em.createQuery("update Customer c set c.name=:name where c.id=:id");
+			 * q.setParameter("name", name); q.setParameter("id", id); int UpdateCountOutput
+			 * = q.executeUpdate();
+			 */
+			
+			
+			
+			Query query = em.createNamedQuery("findname");  
+			Query q = em.createNamedQuery("deletename");
+			q.setParameter(1, "dk");
+			 q.executeUpdate();
+	        @SuppressWarnings("unchecked")
+			List<Customer> list =query.getResultList();  
+	        
+	          for(Customer s:list) {  
+	                
+	             System.out.println(s.getId()+" \t"+s.getName());
+	            
+	          }
 			em.getTransaction().commit();
 			
 			/*
