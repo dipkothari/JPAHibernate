@@ -1,0 +1,16 @@
+@Entity
+public class Project{
+	@Id
+	int projectId;
+	@Temporal(TemporalType.Date)       //1
+	Calendar dateOfCreation;
+	
+	String pmName;
+	
+	
+	@Transient                         //2
+	int versionNumber;
+}
+
+	@PostRemove                        //3
+
